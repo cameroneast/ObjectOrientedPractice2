@@ -1,0 +1,15 @@
+@startuml Task3
+
+class Main {
+    + main(args: String[]): void
+}
+
+class java.io.File
+class java.util.Scanner
+class java.io.FileNotFoundException
+
+Main ..> java.io.File : reads
+Main ..> java.util.Scanner : uses
+Main ..> java.io.FileNotFoundException : catches
+
+@enduml

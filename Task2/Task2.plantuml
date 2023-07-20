@@ -1,0 +1,48 @@
+@startuml Task2
+
+class University {
+  - name: String
+  - departments: List<Department>
+
+  + University(name: String)
+  + addDepartment(department: Department): void
+  + displayDetails(): void
+}
+
+class Department {
+  - name: String
+  - courses: List<Course>
+  - instructors: List<Instructor>
+
+  + Department(name: String)
+  + addCourse(course: Course): void
+  + addInstructor(instructor: Instructor): void
+  + displayDetails(): void
+}
+
+class Course {
+  - name: String
+
+  + Course(name: String)
+  + displayDetails(): void
+}
+
+class Instructor {
+  - name: String
+
+  + Instructor(name: String)
+  + displayDetails(): void
+}
+
+class Main {
+  + main(args: String[]): void
+}
+
+Main --> University
+Main --> Department
+Main --> Course
+Main --> Instructor
+University "1" *-down-> "*" Department : has
+Department "1" *-down-> "*" Course : has
+Department "1" *-down-> "*" Instructor : has
+@enduml

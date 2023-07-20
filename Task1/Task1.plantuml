@@ -1,0 +1,39 @@
+@startuml Task1
+
+class Vehicle {
+  - brand: String
+  - year: int
+
+  + Vehicle(brand: String, year: int)
+  + displayDetails(): void
+}
+
+class Car {
+  - make: String
+  - year: int
+  - fuelType: String
+
+  + Car(make: String, year: int, fuelType: String)
+  + displayDetails(): void
+}
+
+class ElectricCar {
+  - make: String
+  - year: int
+  - batteryCapacity: double
+
+  + ElectricCar(make: String, year: int, batteryCapacity: double)
+  + displayDetails(): void
+}
+
+class Main {
+  + main(args: String[]): void
+}
+
+Main --> Car
+Main --> ElectricCar
+
+Car --|> Vehicle
+ElectricCar --|> Vehicle
+
+@enduml
